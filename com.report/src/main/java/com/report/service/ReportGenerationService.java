@@ -26,12 +26,13 @@ public class ReportGenerationService {
     
     public byte[] generateReport(String year, String branch) {
         try {
-            // Load the .jrxml file from the classpath or file system
-            JasperReport jasperReport = JasperCompileManager.compileReport(reportTemplate);
-
             // Fetch data from the database (example: get all students)
             List<Student> students = getStudentsByYearAndBranch(year, branch);
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(students);
+
+            // Load the .jrxml file from the classpath or file system
+            // Move this line after fetching the data to avoid stream closure issues
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportTemplate);
 
             // Fill the report with data
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, dataSource);

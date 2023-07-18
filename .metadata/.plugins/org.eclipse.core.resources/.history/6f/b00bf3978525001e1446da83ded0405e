@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Student Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Enter Student Data</h1>
+        <form th:action="@{/save-student}" method="post">
+            <div class="form-group">
+                <label for="rollNumber">Roll Number</label>
+                <input type="number" class="form-control" id="rollNumber" name="rollNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Year</label>
+                <select class="form-control" id="year" name="year" required>
+                    <option value="SE">FE</option>
+                    <option value="FE">SE</option>
+                    <option value="BE">TE</option>
+                    <option value="TE">BE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch</label>
+                <select class="form-control" id="branch" name="branch" required>
+                    <option value="Mechanical">MechanicalEngineering</option>
+                    <option value="Electrical">ElectricalEngineering</option>
+                    <option value="Computer">ComputerScience</option>
+                    <option value="Civil">CivilEngineering</option>
+                    <option value="Civil">InformationTechnology</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="attendance">Attendance (%)</label>
+                <input type="text" class="form-control" id="attendance" name="attendance" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

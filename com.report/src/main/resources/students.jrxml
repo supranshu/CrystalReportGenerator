@@ -90,14 +90,14 @@
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="cfc17863-2b1d-4e01-99b5-14e371fcf55d"/>
 			</line>
-			<textField textAdjust="StretchHeight">
+			<textField >
 				<reportElement x="0" y="0" width="120" height="37" uuid="091b1754-e368-46ce-9b29-3bae2094c93e"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{rollNumber}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField >
 				<reportElement x="111" y="0" width="111" height="20" uuid="b7cf7e6d-e66b-4816-a499-165288a4db65">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eeb6acd1-ce93-426d-9e83-89a67e2de7c4"/>
 				</reportElement>
@@ -106,7 +106,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{attendance}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField >
 				<reportElement x="222" y="0" width="111" height="20" uuid="8aebb3c2-934c-4606-8171-d687070596be">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="38022f09-1efc-4b1b-8ce0-ac540ca9ebfe"/>
 				</reportElement>
@@ -115,7 +115,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{branch}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField >
 				<reportElement x="333" y="0" width="111" height="20" uuid="9873dfd9-b0f7-4ad0-a7ae-6dafb770d302">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b70e7c12-3534-4f6b-85d8-0391712af68d"/>
 				</reportElement>
@@ -124,7 +124,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField >
 				<reportElement x="444" y="0" width="111" height="20" uuid="32bdd7b9-be1b-4986-abe7-6c23142e235d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3f6bc39f-3184-43ba-a791-78bab8deebd0"/>
 				</reportElement>
