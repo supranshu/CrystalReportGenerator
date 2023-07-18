@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+    <!-- Link to your CSS file -->
+    <!-- Add this inside the <head> section of index.html -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Welcome to the Index Page</h1>
+    <p th:text="${message}"></p>
+    
+    <!-- Add links to Option 1 and Option 2 forms -->
+    <a th:href="@{/enter-data}">Option 1: Enter Data</a><br>
+    <a th:href="@{/generatereport}">Option 2: Generate Report</a>
+</body>
+</html>

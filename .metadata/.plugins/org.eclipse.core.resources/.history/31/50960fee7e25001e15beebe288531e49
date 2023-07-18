@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Student Data</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Student Data</h1>
+        <!-- Your form to enter data goes here -->
+    </div>
+</body>
+</html>

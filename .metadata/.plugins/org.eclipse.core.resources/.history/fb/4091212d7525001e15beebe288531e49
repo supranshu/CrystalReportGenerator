@@ -1,0 +1,23 @@
+public byte[] generateReport(String year, String branch) {
+    try {
+        // Load the .jrxml file from the classpath or file system
+        JasperReport jasperReport = JasperCompileManager.compileReport(reportTemplate);
+
+        // Fetch data from the database (example: get all students)
+        List<Student> students = getStudentsByYearAndBranch(year, branch);
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(students);
+
+        // Fill the report with data
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, dataSource);
+
+        // Export the report to PDF format (you can use other formats like HTML, Excel, etc.)
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
+
+        return outputStream.toByteArray();
+    } catch (JRException e) {
+        e.printStackTrace();
+        // Handle the exception as required
+        return null;
+    }
+}
