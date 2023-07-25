@@ -32,31 +32,28 @@ public class ReportGenerationService {
 
  public byte[] generateReport(String year, String branch) {
      try {
-         // Fetch data from the database (example: get all students)
+         
          List<Student> students = getStudentsByYearAndBranch(year, branch);
          JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(students);
 
-         // Load the .jrxml file from the classpath or file system
-         // Move this line after fetching the data to avoid stream closure issues
+         
          InputStream reportTemplate = getClass().getResourceAsStream("/students.jrxml");
          JasperReport jasperReport = JasperCompileManager.compileReport(reportTemplate);
 
-         // Fill the report with data
+         
          JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, dataSource);
 
-         // Export the report to PDF format (you can use other formats like HTML, Excel, etc.)
          ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
          JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
 
-         // Return the generated PDF as a byte array
          return outputStream.toByteArray();
      } catch (JRException e) {
          e.printStackTrace();
-         // Handle the exception as required
+        
          return null;
      } catch (Exception e) {
          e.printStackTrace();
-         // Handle the exception as required
+         
          return null;
      }
  }

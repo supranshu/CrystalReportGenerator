@@ -18,13 +18,13 @@ public class StudentController {
 
     @GetMapping("/enter-data")
     public String showEnterDataForm() {
-        return "enter_data"; // This will return the enter_data.html template
+        return "enter_data"; 
     }
 
     @PostMapping("/save-student")
     public String saveStudent(@ModelAttribute Student student) {
         try {
-            // Assuming you have the StudentRepo interface with the save method
+        
             studentRepo.save(student);
             return "index";
         } catch (Exception e) {

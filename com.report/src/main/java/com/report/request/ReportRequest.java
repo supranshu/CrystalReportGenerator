@@ -3,9 +3,7 @@ package com.report.request;
 public class ReportRequest {
     private String year;
     private String branch;
-    // Add more attributes as per your report criteria
-
-    // Constructors, getters, and setters
+   
 
     public ReportRequest() {
     }
@@ -31,5 +29,5 @@ public class ReportRequest {
         this.branch = branch;
     }
 
-    // Add more getters and setters for additional attributes, if any
+    
 }

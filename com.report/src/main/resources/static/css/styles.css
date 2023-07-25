@@ -1,6 +1,4 @@
-/* styles.css */
 
-/* Center the content vertically and horizontally */
 body {
     display: flex;
     justify-content: center;
@@ -32,7 +30,7 @@ a:hover {
     color: #0056b3;
 }
 
-/* Add some spacing between the links */
+
 a + a {
     margin-top: 20px;
 }

@@ -8,9 +8,7 @@ import com.report.entities.Student;
 
 public class ReportResponse {
     private List<Student> students;
-    // Add more attributes as per your report data
-
-    // Constructors, getters, and setters
+    
 
     public ReportResponse() {
     }
@@ -27,5 +25,5 @@ public class ReportResponse {
         this.students = students;
     }
 
-    // Add more getters and setters for additional attributes, if any
+    
 }

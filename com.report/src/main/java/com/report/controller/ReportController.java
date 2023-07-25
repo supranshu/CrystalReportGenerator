@@ -39,9 +39,9 @@ public class ReportController {
 
     @GetMapping("/generatereport")
     public String redirectToGenerateReportPage(Model model) {
-        // Perform any necessary logic and data handling here
-        model.addAttribute("students", null); // Add this line to pass null initially
-        return "generate_report"; // This will render generate_report.html using Thymeleaf
+        
+        model.addAttribute("students", null); 
+        return "generate_report"; 
     }
     @GetMapping("/generate-report")
     public String showGenerateReportForm(Model model) {
