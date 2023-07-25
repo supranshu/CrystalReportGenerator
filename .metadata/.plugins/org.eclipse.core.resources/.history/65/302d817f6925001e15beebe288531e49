@@ -1,8 +1,0 @@
-package com.report.request;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public class ReportGenerationService {
-    // Add report generation logic here
-}

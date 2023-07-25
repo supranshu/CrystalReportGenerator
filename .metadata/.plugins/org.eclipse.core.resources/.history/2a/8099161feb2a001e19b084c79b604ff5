@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Report</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Generate Jasper Report</h1>
+        <form th:action="@{/generate-report}" method="get" target="_blank">
+            <div class="form-group">
+                <label for="year">Year</label>
+                <select class="form-control" id="year" name="year" required>
+                    <option value="FE">FE</option>
+                    <option value="SE">SE</option>
+                    <option value="TE">TE</option>
+                    <option value="BE">BE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch</label>
+                <select class="form-control" id="branch" name="branch" required>
+                    <option value="MechanicalEngineering">Mechanical Engineering</option>
+                    <option value="ElectricalEngineering">Electrical Engineering</option>
+                    <option value="ComputerScience">Computer Science Engineering</option>
+                    <option value="CivilEngineering">Civil Engineering</option>
+                    <option value="InformationTechnology">Information Technology Engineering</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Report</button>
+        </form>
+    </div>
+</body>
+</html>
+

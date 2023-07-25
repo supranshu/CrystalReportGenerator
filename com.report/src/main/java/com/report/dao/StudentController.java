@@ -26,7 +26,7 @@ public class StudentController {
         try {
             // Assuming you have the StudentRepo interface with the save method
             studentRepo.save(student);
-            return "redirect:/enter-data?success=true";
+            return "index";
         } catch (Exception e) {
             e.printStackTrace();
             return "redirect:/enter-data?error=true";

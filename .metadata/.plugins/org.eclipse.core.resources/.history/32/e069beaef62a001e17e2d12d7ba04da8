@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Export Data</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Student Data Table</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Branch</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the list of students and display the data in rows -->
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.rollNumber}"></td>
+                    <td th:text="${student.name}"></td>
+                    <td th:text="${student.year}"></td>
+                    <td th:text="${student.branch}"></td>
+                    <td th:text="${student.attendance}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Add buttons to export the data in different formats -->
+        <a class="btn btn-primary" th:href="@{/export/csv}" target="_blank">Export as CSV</a>
+        <a class="btn btn-success" th:href="@{/export/excel}" target="_blank">Export as Excel</a>
+        <a class="btn btn-secondary" th:href="@{/export/jasper}" target="_blank">Export as Jasper (PDF)</a>
+        <a class="btn btn-info" th:href="@{/export/notepad}" target="_blank">Export as Notepad</a>
+    </div>
+</body>
+</html>

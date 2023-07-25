@@ -1,8 +1,0 @@
-package com.report.request;
-
-public class ReportRequest {
-    private String year;
-    private String branch;
-
-    // Add getter and setter methods for the properties
-}
