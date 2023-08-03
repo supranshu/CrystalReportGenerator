@@ -9,7 +9,6 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpHeaders"/>
     <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
     <fullyQualifiedTypeName name="org.springframework.http.ContentDisposition"/>
-    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="com.report.request.ReportResponse"/>
     <fullyQualifiedTypeName name="com.report.service.ReportResponse"/>
     <fullyQualifiedTypeName name="java.io.File"/>
@@ -28,11 +27,9 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="ch.qos.logback.core.model.Model"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
     <fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFWorkbook"/>
     <fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFSheet"/>
@@ -44,4 +41,7 @@
     <fullyQualifiedTypeName name="net.sf.jasperreports.engine.JRRuntimeException"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.report.service.ReportForm"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Student Management System</h1>
+        <div class="options">
+            <!-- Use Thymeleaf URL syntax to call the controller methods -->
+            <a th:href="@{/enter-data}">
+                <button>Option 1: Enter Student Data</button>
+            </a>
+            <a th:href="@{/generate-report}">
+                <button>Option 2: Generate Jasper Report</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

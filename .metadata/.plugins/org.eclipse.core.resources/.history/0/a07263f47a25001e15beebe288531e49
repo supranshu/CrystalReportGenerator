@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Report Generator</title>
+    <!-- Add any necessary CSS styles here -->
+</head>
+<body>
+    <h1>Generate Student Report</h1>
+    <form id="reportForm">
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br>
+
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch" name="branch" required><br>
+
+        <!-- Add other report parameters here if needed -->
+
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <div id="reportResult"></div>
+
+    <script>
+        // JavaScript code to handle form submission and AJAX request
+        document.getElementById("reportForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Extract the form data
+            const formData = new FormData(event.target);
+            const year = formData.get("year");
+            const branch = formData.get("branch");
+
+            // Add other form fields as needed
+
+            // Send an AJAX request to trigger the report generation
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/generate-report", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.responseType = "blob"; // We expect a binary response (report file)
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Report generated successfully
+                    const blob = new Blob([xhr.response], { type: "application/pdf" });
+                    const reportURL = URL.createObjectURL(blob);
+
+                    // Display the generated report as a link for download
+                    const downloadLink = document.createElement("a");
+                    downloadLink.href = reportURL;
+                    downloadLink.download = "student_report.pdf"; // You can set a custom filename here
+                    downloadLink.textContent = "Download Report";
+                    document.getElementById("reportResult").appendChild(downloadLink);
+                } else {
+                    // Report generation failed
+                    console.error("Report generation failed:", xhr.responseText);
+                    alert("Report generation failed. Please try again.");
+                }
+            };
+            xhr.onerror = function() {
+                console.error("Request failed");
+                alert("Request failed. Please check your internet connection.");
+            };
+            xhr.send(JSON.stringify({ year, branch }));
+        });
+    </script>
+</body>
+</html>

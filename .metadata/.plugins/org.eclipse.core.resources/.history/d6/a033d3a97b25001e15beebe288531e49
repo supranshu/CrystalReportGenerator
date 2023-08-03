@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Student Management System</h1>
+        <div class="options">
+            <button onclick="redirectToEnterData()">Option 1: Enter Student Data</button>
+            <button onclick="redirectToGenerateReport()">Option 2: Generate Jasper Report</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToEnterData() {
+            window.location.href = "enter_data.html";
+        }
+
+        function redirectToGenerateReport() {
+            window.location.href = "generate_report.html";
+        }
+    </script>
+</body>
+</html>

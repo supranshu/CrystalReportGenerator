@@ -26,7 +26,7 @@ public class StudentController {
         try {
         
             studentRepo.save(student);
-            return "index";
+            return "home";
         } catch (Exception e) {
             e.printStackTrace();
             return "redirect:/enter-data?error=true";

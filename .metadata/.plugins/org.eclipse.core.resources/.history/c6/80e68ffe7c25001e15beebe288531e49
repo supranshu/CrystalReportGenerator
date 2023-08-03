@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Your HTML content here -->
+    <h1>Welcome to the Index Page</h1>
+    <!-- Thymeleaf syntax for rendering dynamic content -->
+    <p th:text="${message}"></p>
+</body>
+</html>

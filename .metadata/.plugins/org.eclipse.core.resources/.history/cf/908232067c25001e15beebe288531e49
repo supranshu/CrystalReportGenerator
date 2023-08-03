@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Jasper Report</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Jasper Report</h1>
+        <!-- Your form to generate the report goes here -->
+    </div>
+</body>
+</html>

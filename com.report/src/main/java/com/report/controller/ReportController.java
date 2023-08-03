@@ -14,11 +14,13 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -34,7 +36,7 @@ public class ReportController {
 
     @GetMapping("/")
     public String showIndexPage() {
-        return "index"; // This will render index.html using Thymeleaf
+        return "home"; // This will render index.html using Thymeleaf
     }
 
     @GetMapping("/generatereport")
@@ -60,17 +62,16 @@ public class ReportController {
 
 
     @GetMapping(value = "/export/pdf", produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<byte[]> exportAsJasper(@RequestParam("year") String year, @RequestParam("branch") String branch) {
+    public ResponseEntity<byte[]> exportPdf(@RequestParam("year") String year, @RequestParam("branch") String branch) {
         byte[] reportBytes = reportGenerationService.generateReport(year, branch);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=report.pdf");
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("inline", "report.pdf");
 
-        return ResponseEntity.ok()
-                .headers(headers)
-                .contentType(MediaType.APPLICATION_PDF)
-                .body(reportBytes);
+        return new ResponseEntity<>(reportBytes, headers, HttpStatus.OK);
     }
+
 
     @GetMapping(value = "/export/csv", produces = "text/csv")
     public ResponseEntity<String> exportAsCsv(@RequestParam String year, @RequestParam String branch, Model model) {
@@ -157,6 +158,21 @@ public class ReportController {
         return ResponseEntity.ok()
                 .headers(headers)
                 .contentType(MediaType.TEXT_PLAIN)
-                .body(notepadContent.toString());
+                .body(notepadContent.toString()); 
     }
+     
+
+    @GetMapping(value = "/generate")
+    public String generateReport(@ModelAttribute("reportForm") ReportForm reportForm, Model model, @RequestParam String year, @RequestParam String branch) {
+        List<Student> students = studentRepo.findByYearAndBranch(year, branch);
+        model.addAttribute("students", students);
+        
+        // Generate the Jasper PDF report and convert to byte array
+        byte[] pdfBytes = reportGenerationService.generateReport(year, branch);
+        model.addAttribute("pdfBytes", pdfBytes);
+        
+        return "produce_report";
+    }
+
+
 }
