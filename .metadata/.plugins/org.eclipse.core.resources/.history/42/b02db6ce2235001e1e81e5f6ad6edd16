@@ -19,19 +19,12 @@
             padding: 8px;
             text-align: left;
             border: 1px solid #ddd;
-            border: none; /* Reset all borders */
-        	border-bottom: 1px solid #666666;
-        	
-            background-clip: content-box;
-        	 /* Add bottom border */
         }
         th {
             font-size: 14px;
             font-weight: 100;
             background-color: #E6E6E6;
             color: #006699;
-            padding: 20px 0px 0;
-            
             
         }
        
@@ -45,7 +38,7 @@
             color: #FFFFFF;
             text-align: left; 
             font-size: 34px; 
-            font-weight: 400;
+            font-weight: 300;
             padding: 20px;
             width: 70%;
 	        margin: 0 auto;
@@ -57,7 +50,7 @@
         	
         }
         .btn-links{
-        	margin-left:170px;
+        	margin-left:150px;
         }
     </style>
    

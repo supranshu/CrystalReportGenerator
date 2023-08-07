@@ -18,8 +18,8 @@
         th, td {
             padding: 8px;
             text-align: left;
-            border: 1px solid #ddd;
-            border: none; /* Reset all borders */
+            
+             /* Reset all borders */
         	border-bottom: 1px solid #666666;
         	
             background-clip: content-box;
@@ -30,7 +30,6 @@
             font-weight: 100;
             background-color: #E6E6E6;
             color: #006699;
-            padding: 20px 0px 0;
             
             
         }

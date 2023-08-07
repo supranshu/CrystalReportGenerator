@@ -10,31 +10,22 @@
         /* Example styles to get you started */
         table {
             border-collapse: collapse;
-            font-family: "Arial", sans-serif;
-            width: 70%;
-	        margin: 0 auto; /* Center the table horizontally */   
+            width: 100%;
+            
+            
         }
-        
         th, td {
             padding: 8px;
             text-align: left;
             border: 1px solid #ddd;
-            border: none; /* Reset all borders */
-        	border-bottom: 1px solid #666666;
-        	
-            background-clip: content-box;
-        	 /* Add bottom border */
         }
         th {
             font-size: 14px;
-            font-weight: 100;
+            font-weight: bold;
             background-color: #E6E6E6;
             color: #006699;
-            padding: 20px 0px 0;
-            
             
         }
-       
         td {
             font-size: 14px;
             font-weight: 500;
@@ -45,19 +36,13 @@
             color: #FFFFFF;
             text-align: left; 
             font-size: 34px; 
-            font-weight: 400;
+            font-weight: 300;
             padding: 20px;
-            width: 70%;
-	        margin: 0 auto;
         }
         .page-header p{
         	text-align: right;  
         	font-size: 18px; 
         	font-weight: 150;
-        	
-        }
-        .btn-links{
-        	margin-left:170px;
         }
     </style>
    
@@ -65,32 +50,32 @@
 
 <body>
     <div class="container mt-5">
-	        <div class="page-header">
-		        STUDENT INFO
-		        <p>Student Info</p>
-		    </div>
-	        
-			    <table>
-			        <thead>
-			            <tr>
-			                <th>roll_number</th>
-			                <th>attendance</th>
-			                <th>branch</th>
-			                <th>name</th>
-			                <th>year</th>
-			            </tr>
-			        </thead>
-			        <tbody>
-			            <!-- Loop through students and generate table rows -->
-			            <tr th:each="student : ${students}">
-			                <td th:text="${student.rollNumber}">Roll Number</td>
-			                <td th:text="${student.attendance}">Attendance</td>
-			                <td th:text="${student.branch}">Branch</td>
-			                <td th:text="${student.name}">Name</td>
-			                <td th:text="${student.year}">Year</td>
-			            </tr>
-			        </tbody>
-			    </table>
+        <div class="page-header">
+	        STUDENT INFO
+	        <p>Student Info</p>
+	    </div>
+        
+		    <table>
+		        <thead>
+		            <tr>
+		                <th>roll_number</th>
+		                <th>sttendance</th>
+		                <th>branch</th>
+		                <th>name</th>
+		                <th>year</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <!-- Loop through students and generate table rows -->
+		            <tr th:each="student : ${students}">
+		                <td th:text="${student.rollNumber}">Roll Number</td>
+		                <td th:text="${student.attendance}">Attendance</td>
+		                <td th:text="${student.branch}">Branch</td>
+		                <td th:text="${student.name}">Name</td>
+		                <td th:text="${student.year}">Year</td>
+		            </tr>
+		        </tbody>
+		    </table>
 		    
 
 
@@ -100,7 +85,7 @@
 
 
         
-        <div class="mt-3 btn-links">
+        <div class="mt-3">
             <a class="btn btn-secondary mr-2" th:href="@{/export/csv(year=${year}, branch=${branch})}" target="_blank">Export as CSV(.csv)</a>
             <a class="btn btn-secondary mr-2" th:href="@{/export/excel(year=${year}, branch=${branch})}" target="_blank">Export as Excel(.xl)</a>
             <a class="btn btn-secondary mr-2" th:href="@{/export/notepad(year=${year}, branch=${branch})}" target="_blank">Export as Text(.txt)</a>

@@ -20,18 +20,14 @@
             text-align: left;
             border: 1px solid #ddd;
             border: none; /* Reset all borders */
-        	border-bottom: 1px solid #666666;
-        	
-            background-clip: content-box;
-        	 /* Add bottom border */
+        	border-bottom: 1px solid #666666; /* Add bottom border */
         }
         th {
             font-size: 14px;
             font-weight: 100;
             background-color: #E6E6E6;
             color: #006699;
-            padding: 20px 0px 0;
-            
+            padding: 5px 10px 0;
             
         }
        
